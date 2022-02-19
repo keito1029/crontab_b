@@ -160,5 +160,4 @@ DISPLAY=:0
 #9anime.to
 #9anime.ru
 #9anime.cz
-#9anime.ws
-
+#9anime.cz
