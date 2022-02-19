@@ -1,0 +1,164 @@
+# Edit this file to introduce tasks to be run by cron.
+# 
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+# 
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+# m h  dom mon dow   command
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+XDG_RUNTIME_DIR=/run/user/1000
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+DISPLAY=:0
+#*/25 *1,*3,*5,*7,*9 * * * bash /etc/chromium/policies/managed/copy_rest.sh
+#00 *0,*2,*4,*6,*8 * * * bash /etc/chromium/policies/managed/copy_study.sh
+#00 */1 * * * bash /etc/chromium/policies/managed/copy_study.sh
+#*/20 */1 * * * bash /etc/chromium/policies/managed/copy_study.sh
+
+#*/25 *1,*3,*5,*7,*9 * * * bash /etc/chromium/policies/managed/copy_rest.sh
+#*/30 *0,*2,*4,*6,*8 * * * bash /etc/chromium/policies/managed/copy_study.sh
+#14 * * * * cat /etc/chromium/policies/managed/copy_study.sh >> ~/cron_test.txt
+
+#目覚まし時計
+#*/5 * * * * bash /home/santa/wakeup.sh & >> errors.log
+#51 05 * * * amixer set Master 95\%; if pgrep -x "vlc" > /dev/null; then pkill vlc; fi; vlc -LZ ~/Music/play2.xspf > /dev/null 2>&1 & rfkill block bluetooth & amixer set Master unmute;amixer set Headphone unmute;amixer set Speaker unmute
+#add 10/8 2020
+#*/30 5-8 * * * amixer set Master 95\%; if pgrep -x "vlc" > /dev/null; then pkill vlc; fi; vlc -LZ ~/Music/play2.xspf > /dev/null 2>&1 & rfkill block bluetooth & amixer set Master unmute;amixer set Headphone unmute;amixer set Speaker unmute
+#*/1 * * * * amixer set Master 95\%; if pgrep -x "vlc" > /dev/null; then pkill vlc; fi; vlc -LZ ~/Music/play2.xspf > /dev/null 2>&1 & rfkill block bluetooth & amixer set Master unmute;amixer set Headphone unmute;amixer set Speaker unmute
+#30 5 * * * amixer set Master 95\%; if pgrep -x "vlc" > /dev/null; then pkill vlc; fi; vlc -LZ ~/Music/play2.xspf > /dev/null 2>&1 & rfkill block bluetooth & amixer set Master unmute;amixer set Headphone unmute;amixer set Speaker unmute
+#30 6-8 * * * amixer set Master 95\%; if pgrep -x "vlc" > /dev/null; then pkill vlc; fi; vlc -LZ ~/Music/play2.xspf > /dev/null 2>&1 & rfkill block bluetooth & amixer set Master unmute;amixer set Headphone unmute;amixer set Speaker unmute
+#*/30 6-8 * * * amixer set Master 95\%; if pgrep -x "vlc" > /dev/null; then pkill vlc; fi; vlc -LZ ~/Music/play2.xspf > /dev/null 2>&1 & rfkill block bluetooth & amixer set Master unmute;amixer set Headphone unmute;amixer set Speaker unmute
+#*/12 7-9 * * * amixer set Master 95\%; if pgrep -x "vlc" > /dev/null; then pkill vlc; fi; vlc -LZ ~/Music/play2.xspf > /dev/null 2>&1 & rfkill block bluetooth & amixer set Master unmute;amixer set Headphone unmute;amixer set Speaker unmute
+#*/30 7-8 * * * amixer set Master 95\%; if pgrep -x "vlc" > /dev/null; then pkill vlc; fi; vlc -LZ ~/Music/play2.xspf > /dev/null 2>&1 & rfkill block bluetooth & amixer set Master unmute;amixer set Headphone unmute;amixer set Speaker unmute
+#00 11-15/2 * * * amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%; if pgrep -x "vlc" > /dev/null; then pkill vlc; fi; vlc -LZ ~/Music/play2.xspf > /dev/null 2>&1 & sleep 60 ; rfkill block bluetooth & amixer set Master unmute;amixer set Headphone unmute;amixer set Speaker unmute
+#*/6 8-9 * * * amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%; if pgrep -x "vlc" > /dev/null; then pkill vlc; fi; vlc -LZ ~/Music/play2.xspf > /dev/null 2>&1 & sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute 
+
+#*/6 6-8 * * 0-2,4-6 amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%; if pgrep -x "vlc" > /dev/null; then pkill vlc; fi; vlc -LZ ~/Music/play2.xspf > /dev/null 2>&1 & sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute 
+#*/6 6-8 * * 3 amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%; if pgrep -x "vlc" > /dev/null; then pkill vlc; fi; vlc -LZ ~/Music/play2.xspf > /dev/null 2>&1 & sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute 
+#00 11-15/2 * * * amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%; if pgrep -x "vlc" > /dev/null; then pkill vlc; fi; vlc -LZ ~/Music/play2.xspf > /dev/null 2>&1 & sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute 
+#00 */2 * * * sh /home/keito/shell_d/remote_push.sh ; date >> git_pullpush.log
+#00 11-15/2 * * * amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%; if pgrep -x "vlc" > /dev/null; then pkill vlc; fi; vlc -L ~/Music/play2.xspf > /dev/null 2>&1 & sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute 
+
+#*/1 * * * * echo hello >> youryou.log
+
+#fnがfnlockや無効にもできない機種なので断念
+#xdotool key 122; sleep 2 ; xdotool key 122 ; sleep 2 ; xdotool key 121
+#00 11-15/2 * * * amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 90\%; if pgrep -x "vlc" > /dev/null; then pkill vlc; fi; vlc -LZ ~/Music/play2.xspf > /dev/null 2>&1 & sleep 60 ; rfkill block bluetooth & amixer set Master unmute;amixer set Headphone unmute;amixer set Speaker unmute ; xdotool key 123 ; xdotool key 122
+#00 17-21/2 * * * amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%; if pgrep -x "vlc" > /dev/null; then pkill vlc; fi; vlc -LZ ~/Music/play2.xspf > /dev/null 2>&1 & sleep 60 ; rfkill block bluetooth & amixer set Master unmute;amixer set Headphone unmute;amixer set Speaker unmute
+
+#00 8-20/3 * * * amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%; if pgrep -x "vlc" > /dev/null; then pkill vlc; fi; vlc -LZ ~/Music/play2.xspf > /dev/null 2>&1 & sleep 60 ; rfkill block bluetooth & amixer set Master unmute;amixer set Headphone unmute;amixer set Speaker unmute
+#00 20 * * * amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%; if pgrep -x "vlc" > /dev/null; then pkill vlc; fi; vlc -LZ ~/Music/play2.xspf > /dev/null 2>&1 & sleep 60 ; rfkill block bluetooth & amixer set Master unmute;amixer set Headphone unmute;amixer set Speaker unmute
+#30 20 * * * amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%; if pgrep -x "vlc" > /dev/null; then pkill vlc; fi; vlc -LZ ~/Music/play2.xspf > /dev/null 2>&1 & sleep 60 ; rfkill block bluetooth & amixer set Master unmute;amixer set Headphone unmute;amixer set Speaker unmute
+#50 20 * * * amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%; if pgrep -x "vlc" > /dev/null; then pkill vlc; fi; vlc -LZ ~/Music/play2.xspf > /dev/null 2>&1 & sleep 60 ; rfkill block bluetooth & amixer set Master unmute;amixer set Headphone unmute;amixer set Speaker unmute
+#44 03 * * * teams ; sleep 3 ; xdotool mousemove 153,292 ; xdotool click 1 ;sleep 3; xdotool mousemove_relative 1657,-214 ; xdotool click 1 ;sleep 3; xdotool mousemove_relative -1076,638 ; xdotool click 1 ;sleep 3; xdotool mousemove_relative 427,0 ; xdotool click 1 ;
+#34 02 * * * teams;sleep 3;xdotool mousemove 153,292;xdotool click 1;sleep 3;xdotool mousemove 1810,78;xdotool click 1;sleep 3;xdotool mousemove 734,716;xdotool click 1;sleep 3;xdotool mousemove 1161,715;xdotool click 1;
+#00 21 * * * rfkill block bluetooth & amixer set Master unmute;amixer set Headphone unmute;amixer set Speaker unmute;amixer set Master 95\%;pkill teams;teams;sleep 40;for i in `seq 13`; do xdotool key Tab;sleep 2; done;sleep 3;xdotool key space;sleep 5;for i in `seq 2`; do xdotool key Tab;sleep 1; done;sleep 3;xdotool key space;xdotool key Tab;xdotool key space;sleep 5;for i in `seq 2`; do xdotool key Tab;sleep 1; done;sleep 3;xdotool key space;
+#*/2 * * * * rfkill block bluetooth & amixer set Master unmute;amixer set Headphone unmute;amixer set Speaker unmute;amixer set Master 95\%;pkill teams;teams;sleep 40;for i in `seq 13`; do xdotool key Tab;sleep 2; done;sleep 3;xdotool key space;sleep 5;for i in `seq 2`; do xdotool key Tab;sleep 1; done;sleep 3;xdotool key space;xdotool key Tab;xdotool key space;sleep 5;for i in `seq 2`; do xdotool key Tab;sleep 1; done;sleep 3;xdotool key space;
+#00 05 * * * rfkill block bluetooth; amixer sset Master 80%; /usr/bin/mpv --no-video --shuffle https://soundcloud.com/k-y-692291413/sets/favorit/s-AwFfb;
+#*/2 * * * * mpv --player-operation-mode=pseudo-gui Videos/toeic
+# find all visible browser windows
+
+*/1 * * * * (date ;cat /etc/hosts) >> hosts.log
+
+
+#*/1 * * * * amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 50\%; if pgrep -x "mpv" > /dev/null; then pkill -f '/usr/bin/mpv --save-position-on-quit=no --volume=50 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes'; fi; /usr/bin/mpv --volume=100 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes > /dev/null 2>&1 & sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute 
+#*/1 * * * * '/usr/bin/mpv --save-position-on-quit=no --volume=50 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes'; fi; /usr/bin/mpv --volume=100 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes > /dev/null 2>&1 & sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute 
+
+#*/1 * * * * amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%; if pgrep -f '/usr/bin/mpv --save-position-on-quit=no --volume=50 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes' > /dev/null; then pkill -f '/usr/bin/mpv --save-position-on-quit=no --volume=50 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes'; pkill wifiaudio; fi; /home/keito/Downloads/wifiaudio_linux > /dev/null 2>&1 ; /usr/bin/mpv --save-position-on-quit=no --volume=50 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes > /dev/null 2>&1 ; sleep 60 ; rfkill block bluetooth ; amixer set Master unmute ; amixer set Headphone unmute ; amixer set Speaker unmute 
+
+# confファイルに--save-position-on-quit=yesと記述し，crontab内でnoと再定義しようとすると起動しなかった
+# /dev/nullはまとめないとエラーになる?->間違いだったかも
+
+#*/2 * * * * amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%; if pgrep -x "mpv" ; then pkill -f "/usr/bin/mpv" & pkill wifiaudio; fi; /home/keito/Downloads/wifiaudio_linux > /dev/null 2>&1 & /usr/bin/mpv --volume=50 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes > /dev/null 2>&1 & sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute
+
+#*/2 * * * * (amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%; if pgrep -x "mpv" ; then pkill -f "/usr/bin/mpv" & pkill wifiaudio; fi; /home/keito/Downloads/wifiaudio_linux & /usr/bin/mpv --volume=50 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes ; sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute) > /dev/null 2>&1 & 
+
+#*/1 * * * * amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%; if pgrep -x "mpv" > /dev/null; then pkill mpv; pkill wifiaudio; fi; /home/keito/Downloads/wifiaudio_linux > /dev/null 2>&1 & /usr/bin/mpv --volume=50 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes > /dev/null 2>&1 & sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute
+
+
+#*/2 * * * * amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%; if pgrep -x "mpv" ; then pkill -f "/usr/bin/mpv" & pkill wifiaudio; fi; /home/keito/Downloads/wifiaudio_linux & /usr/bin/mpv --volume=50 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes > /dev/null 2>&1 & sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute & 
+
+# &を連続してつけると，標準出力は最後にまとめられる ;をつけてしまうと途切れてエラーになる
+# original
+#*/2 * * * *  amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%; if pgrep -x "mpv" > /dev/null; then pkill mpv; pkill wifiaudio; fi; /home/keito/Downloads/wifiaudio_linux > /dev/null 2>&1 & /usr/bin/mpv --volume=50 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes > /dev/null 2>&1 & sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute   
+
+### original ###
+# アプリを並列に起動して，;でまとめると上手く起動する
+# 標準出力を捨てる時は/dev/nullへリダイレクト
+# 標準出力を捨てるが，エラー出力が必要な時は/dev/null 2>&1 へリダイレクト
+# 処理を括弧でまとめて並列実行させた
+#*/1 * * * *  amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%; if pgrep -f /usr/bin/mpv ; then pkill -f /usr/bin/mpv & pkill wifiaudio ; fi > /dev/null; /home/keito/Downloads/wifiaudio_linux & /usr/bin/mpv --volume=50 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes > /dev/null & (sleep 10 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute) > /dev/null; 
+### modify original ###
+#*/1 * * * *  (amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%) > /dev/null ; (if pgrep -f /usr/bin/mpv ; then pkill -f /usr/bin/mpv & pkill wifiaudio ; fi) > /dev/null; (/home/keito/Downloads/wifiaudio_linux & /usr/bin/mpv --volume=50 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes) > /dev/null & (sleep 10 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute) > /dev/null; 
+#test
+
+#*/6 * * * *  (amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%) > /dev/null ; (if pgrep -f /usr/bin/mpv ; then pkill -f /usr/bin/mpv & pkill wifiaudio ; fi) > /dev/null; (/home/keito/Downloads/wifiaudio_linux & /usr/bin/mpv  --volume=50 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes) > /dev/null & (sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute) > /dev/null; 
+
+#final test
+#長いので同じ時間に3回に分ける
+#*/1 * * * *  (amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%) > /dev/null ; (pkill -f /usr/bin/mpv & pkill wifiaudio) > /dev/null ; (/home/keito/Downloads/wifiaudio_linux & /usr/bin/mpv  --volume=50 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes) > /dev/null ; (sleep 10 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute) > /dev/null & 
+
+#*/6 6-8 * * 0-2,4-6 (amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%) > /dev/null ; (pkill -f /usr/bin/mpv & pkill wifiaudio) > /dev/null; (/home/keito/Downloads/wifiaudio_linux & /usr/bin/mpv  --volume=60 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes) > /dev/null & (sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute) > /dev/null ; 
+#*/6 6-8 * * 3 (amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%) > /dev/null ; (pkill -f /usr/bin/mpv & pkill wifiaudio) > /dev/null; (/home/keito/Downloads/wifiaudio_linux & /usr/bin/mpv  --volume=60 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes) > /dev/null & (sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute) > /dev/null ; 
+#*/6 6-8 * * 0-6 (amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%) > /dev/null ; (pkill -f /usr/bin/mpv & pkill wifiaudio) > /dev/null; (/home/keito/Downloads/wifiaudio_linux & /usr/bin/mpv --volume=60 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes) > /dev/null & (sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute) > /dev/null;
+#*/6 6-8 * * 0-6 (amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%) > /dev/null ; (pkill -f /usr/bin/mpv & pkill wifiaudio) > /dev/null; sleep 3 & (/home/keito/Downloads/wifiaudio_linux & /usr/bin/mpv --volume=60 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes) > /dev/null & (sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute) > /dev/null;
+*/6 6-8 * * 0-6 (amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%) > /dev/null ; (pkill -f 'https://soundcloud.com/k-y-692291413/likes' & pkill wifiaudio) > /dev/null; sleep 3 & (/home/keito/Downloads/wifiaudio_linux & mpv --volume=60 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes) > /dev/null & (sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute) > /dev/null;
+#*/2 * * * 0-6 (amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%) > /dev/null & (pkill wifiaudio & pkill -f /usr/bin/mpv) > /dev/null & sleep 3 ; (/home/keito/Downloads/wifiaudio_linux & /usr/bin/mpv --volume=60 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes) > /dev/null & (sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute) > /dev/null
+#*/2 * * * 0-6 amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%
+#*/2 * * * 0-6 sleep 5; pkill -f 'https://soundcloud.com/k-y-692291413/likes' & pkill wifiaudio
+#*/2 * * * 0-6 sleep 10; (/home/keito/Downloads/wifiaudio_linux & mpv --volume=60 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes) > /dev/null & (sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute) > /dev/null;
+
+#*/2 * * * 0-6 (amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%) > /dev/null & pkill -f 'https://soundcloud.com/k-y-692291413/likes' & pkill wifiaudio & sleep 10 ; /home/keito/Downloads/wifiaudio_linux & mpv --volume=60 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui 'https://soundcloud.com/k-y-692291413/likes' > /dev/null & (sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute) > /dev/null;
+#*/2 * * * 0-6 (amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%) > /dev/null ; (pkill -f /usr/bin/mpv & pkill wifiaudio) > /dev/null; sleep 3; (/home/keito/Downloads/wifiaudio_linux & /usr/bin/mpv --volume=60 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes) > /dev/null & (sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute) > /dev/null; 
+#add pkill -f mpv &から;
+#*/2 14-15 * * 0-6 (amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\% ; pkill -f /usr/bin/mpv & pkill wifiaudio ; /home/keito/Downloads/wifiaudio_linux)  >/dev/null 2>&1
+#*/2 14-15 * * 0-6 sleep 10 ; /usr/bin/mpv --volume=60 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes &>/dev/null 2>&1 
+#*/2 14-15 * * 0-6 sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute 
+
+
+#00 11-15/2 * * * (amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%) > /dev/null ; (pkill -f /usr/bin/mpv & pkill wifiaudio) > /dev/null; (/home/keito/Downloads/wifiaudio_linux & /usr/bin/mpv --volume=60 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes) > /dev/null & (sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute) > /dev/null; 
+00 11-15/2 * * * (amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%) > /dev/null ; (pkill -f /usr/bin/mpv & pkill wifiaudio) > /dev/null; (/home/keito/Downloads/wifiaudio_linux & /usr/bin/mpv --volume=60 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes) > /dev/null & (sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute) > /dev/null;
+00 */2 * * * sh /home/keito/shell_d/remote_push.sh ; date >> git_pullpush.log
+
+
+# Send keystroke
+
+#note
+#;(セミコロン)
+#前のコマンドが終わり次第、次のコマンドが実行される。(3つ以上のコマンドを連結してOKみたい)
+##command1 を実行し、実行後 command2 を実行する。
+
+#&(アンパサンド)
+#;(セミコロン)は前のコマンドの完了を待っていたが、&は待たない。
+##command1 を実行しながら、command2 を実行する。
+#command1 & command2
+
+#&&
+#前のコマンドがうまく終了した(終了ステータスが0)なら、次のコマンドを実行。そうでないなら次のコマンドは実行しない。
+##command1 が 0 を返した場合、command2 を実行
+#command1 && command2
+
+#||
+#&&とは逆で前のコマンドに失敗(終了コード0以外)したら、次のコマンドを実行する。
+
+#9anime.to
+#9anime.ru
+#9anime.cz
+#9anime.ws
+
