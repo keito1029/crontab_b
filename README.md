@@ -1,18 +1,17 @@
-----  
+---  
   
 # Please Commit. you are wellcome.  
   
 ## reference of how to use crontab        
+> https://www.server-memo.net/tips/crontab.html
+  
   
 ---  
-  
-----  
   
 # What's crontab  
   
 crontab can run linux commands at a specified time. crontab is default install. No setup required.  
   
----  
   
 ---  
   
