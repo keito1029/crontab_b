@@ -7,13 +7,15 @@
 #address=/:d*[0-9]\.*\.xyz:/127.0.0.1
 #address=/d*[0-9]\.*\.xyz/127.0.0.1
 #シャープ(#)がワイルドカードになっている
-address=/.xyz/127.0.0.1
-#server=/pic.weeabo0.xyz/okazu-sakutu.xyz/#
+#address=/.xyz/127.0.0.1
+address=/youtube4kdownloader.com/.oceansaver.in/.xyz/127.0.0.1
+server=/pic.weeabo0.xyz/okazu-sakutu.xyz/#
 #address=/pic..xyz/pic..xyz
 #address=/dv151*\.*\.xyz/127.0.0.1
 #address=/:dv151*\.*\.xyz:/127.0.0.1
 #
 #.oceansaver.in/pacific/
+#youtube4kdownloader.com
 
 #become cannot youtube
 #address=/.googlevideo.com/127.0.0.1
