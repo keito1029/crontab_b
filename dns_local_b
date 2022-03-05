@@ -1,0 +1,36 @@
+
+#address=/.googlevideo.com/127.0.0.1
+#address=/googlevideo.com/127.0.0.1
+#address=/.xyz/127.0.0.1
+#address=/d[0-9]{2,}\.*\.xyz/127.0.0.1
+#address=/:d[0-9]\.xxx\.xyz:/127.0.0.1
+#address=/:d*[0-9]\.*\.xyz:/127.0.0.1
+#address=/d*[0-9]\.*\.xyz/127.0.0.1
+#シャープ(#)がワイルドカードになっている
+address=/.xyz/127.0.0.1
+#server=/pic.weeabo0.xyz/okazu-sakutu.xyz/#
+#address=/pic..xyz/pic..xyz
+#address=/dv151*\.*\.xyz/127.0.0.1
+#address=/:dv151*\.*\.xyz:/127.0.0.1
+#
+#.oceansaver.in/pacific/
+
+#become cannot youtube
+#address=/.googlevideo.com/127.0.0.1
+
+##not working
+#local=/9anime/
+#domain=9anime
+#address=/9anime/127.0.0.1
+#address=/gogoanimes../127.0.0.1
+#address=/gogoanimes./127.0.0.1
+#address=/.gogoanimes./127.0.0.1
+#address=/.9anime./127.0.0.1
+#address=/9anime./127.0.0.1
+#address=/*9anime.*/127.0.0.1
+#address=/9anime/127.0.0.1
+##working immidialy
+#address=/gogoanime.nl/127.0.0.1
+#address=/.nl/127.0.0.1
+#address=/9anime.se/127.0.0.1
+
