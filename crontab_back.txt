@@ -100,14 +100,18 @@ DISPLAY=:0
 
 #*/1 * * * * echo hello >> /home/keito/youryou.log 
 
+
 ###change domain test fase###
 #domainにanimeサイト含めようと思ったが，サブ，セカンドレベルドメインが規制出来ない list.b9good.com 9anime. gogoanime
 	#Mon~Thu#
 */1 * * * 0-4,6     root    for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/NetworkManager/dnsmasq.d/local;rm /etc/NetworkManager/dnsmasq.d/locale;chattr -iu /etc/NetworkManager/dnsmasq.d/local;echo 'address=/youtube4kdownloader.com/.oceansaver.in/.xyz/127.0.0.1\nserver=/pic.weeabo0.xyz/okazu-sakutu.xyz/#' > /etc/NetworkManager/dnsmasq.d/local;chattr +ui /etc/NetworkManager/dnsmasq.d/local;chattr -iu /etc/NetworkManager/dnsmasq.d/locale;rm /etc/NetworkManager/dnsmasq.d/locale) & done;
-   #Fri#
+
+	#Fri#
 */1 0-16,21-23 * * 5     root    for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/NetworkManager/dnsmasq.d/local;rm /etc/NetworkManager/dnsmasq.d/locale;chattr -iu /etc/NetworkManager/dnsmasq.d/local;echo 'address=/youtube4kdownloader.com/.oceansaver.in/.xyz/127.0.0.1\nserver=/pic.weeabo0.xyz/okazu-sakutu.xyz/#' > /etc/NetworkManager/dnsmasq.d/local;chattr +ui /etc/NetworkManager/dnsmasq.d/local;chattr -iu /etc/NetworkManager/dnsmasq.d/locale;rm /etc/NetworkManager/dnsmasq.d/locale) & done;
-   #unlock on the Fri#
+
+	#add restart network on Fri#
+*/30 21-23 * * 5     root   service network-manager restart 
+
+	#unlock on the Fri#
 */1 17-20 * * 5     root    for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/NetworkManager/dnsmasq.d/local;rm /etc/NetworkManager/dnsmasq.d/locale;chattr -iu /etc/NetworkManager/dnsmasq.d/local;echo '#address=/youtube4kdownloader.com/.oceansaver.in/.xyz/127.0.0.1\n#server=/pic.weeabo0.xyz/okazu-sakutu.xyz/#' > /etc/NetworkManager/dnsmasq.d/local;chattr +ui /etc/NetworkManager/dnsmasq.d/local;chattr -iu /etc/NetworkManager/dnsmasq.d/locale;rm /etc/NetworkManager/dnsmasq.d/locale) & done;
 ######
-
-
