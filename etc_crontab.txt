@@ -1,0 +1,95 @@
+# /etc/crontab: system-wide crontab
+# Unlike any other crontab you don't have to run the `crontab'
+# command to install the new version when you edit this file
+# and files in /etc/cron.d. These files also have username fields,
+# that none of the other crontabs do.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# m h dom mon dow user	command
+17 *	* * *	root    cd / && run-parts --report /etc/cron.hourly
+25 6	* * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
+52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+#
+
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+XDG_RUNTIME_DIR=/run/user/1000
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+DISPLAY=:0
+
+
+
+#*/1 * * * 0,6 root chattr -iu /etc/hosts;sed -i '3,19c 127.0.0.1 www.youtube.com\n127.0.0.1 y2mate.com\n127.0.0.1 yt1s.com\n127.0.0.1 yt1s.com\n127.0.0.1 www.y2mate.com\n#127.0.0.1 soundcloud.com\n127.0.0.1 www.bilibili.com\n127.0.0.1 www.nicozon.net\n127.0.0.1 9anime.to\n127.0.0.1 www9.gogoanimehub.tv\n127.0.0.1 9anime.ky\n127.0.0.1 9anime.ru\n127.0.0.1 9anime.cz\n127.0.0.1 9anime.ws\n127.0.0.1 www.nicovideo.jp\n127.0.0.1 animenew.be\n127.0.0.1 b9good.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse
+#*/1 * * * 0,6	root	for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/hosts;sed -i '3c 127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse;chattr -iu /etc/hosts;sed -i '3,19c 127.0.0.1 www.youtube.com\n127.0.0.1 y2mate.com\n127.0.0.1 yt1s.com\n127.0.0.1 yt1s.com\n127.0.0.1 www.y2mate.com\n#127.0.0.1 soundcloud.com\n127.0.0.1 www.bilibili.com\n127.0.0.1 www.nicozon.net\n127.0.0.1 9anime.to\n127.0.0.1 www9.gogoanimehub.tv\n127.0.0.1 9anime.ky\n127.0.0.1 9anime.ru\n127.0.0.1 9anime.cz\n127.0.0.1 9anime.ws\n127.0.0.1 www.nicovideo.jp\n127.0.0.1 animenew.be\n127.0.0.1 b9good.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse) & done; 
+#*/1 * * * 0-6	root	for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/hosts;sed -i '3c 127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse;chattr -iu /etc/hosts;sed -i '3,19c 127.0.0.1 www.youtube.com\n127.0.0.1 y2mate.com\n127.0.0.1 yt1s.com\n127.0.0.1 yt1s.com\n127.0.0.1 www.y2mate.com\n#127.0.0.1 soundcloud.com\n127.0.0.1 www.bilibili.com\n127.0.0.1 www.nicozon.net\n127.0.0.1 9anime.to\n127.0.0.1 www9.gogoanimehub.tv\n127.0.0.1 9anime.ky\n127.0.0.1 9anime.ru\n127.0.0.1 9anime.cz\n127.0.0.1 9anime.ws\n127.0.0.1 www.nicovideo.jp\n127.0.0.1 animenew.be\n127.0.0.1 b9good.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse) & done; 
+*/1 * * * 0-4,6	root	for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/hosts;sed -i '3c 127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse;chattr -iu /etc/hosts;sed -i '3,19c 127.0.0.1 www.youtube.com\n127.0.0.1 y2mate.com\n127.0.0.1 yt1s.com\n127.0.0.1 yt1s.com\n127.0.0.1 www.y2mate.com\n#127.0.0.1 soundcloud.com\n127.0.0.1 www.bilibili.com\n127.0.0.1 www.nicozon.net\n127.0.0.1 9anime.to\n127.0.0.1 www9.gogoanimehub.tv\n127.0.0.1 9anime.ky\n127.0.0.1 9anime.ru\n127.0.0.1 9anime.cz\n127.0.0.1 9anime.ws\n127.0.0.1 www.nicovideo.jp\n127.0.0.1 animenew.be\n127.0.0.1 b9good.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse) & done; 
+
+
+##*/1 0-12 * * 5 chattr -iu /etc/hosts;sed -i '3c 127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse  
+##*/1 17-23 * * 5 chattr -iu /etc/hosts;sed -i '3c #127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse  
+##*/1 * * * * chattr -iu /etc/opt/chrome/policies/managed/test.json;sed -ie '3 s/0/1/g' /etc/opt/chrome/policies/managed/test.json;chattr +ui /etc/opt/chrome/policies/managed/test.json
+##*/1 * * * * chattr -iu /etc/opt/chrome/policies/managed/test.json;sed '3 s/1/0/g' /etc/opt/chrome/policies/managed/test.json;chattr +ui /etc/opt/chrome/policies/managed/test.json
+#
+#fri
+#*/1 0-20 * * 5 root  chattr -iu /etc/hosts;sed -i '3c 127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse
+*/1 0-16,21-23 * * 5	root	for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/hosts;sed -i '3c 127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse;chattr -iu /etc/hosts;sed -i '3,19c 127.0.0.1 www.youtube.com\n127.0.0.1 y2mate.com\n127.0.0.1 yt1s.com\n127.0.0.1 yt1s.com\n127.0.0.1 www.y2mate.com\n#127.0.0.1 soundcloud.com\n127.0.0.1 www.bilibili.com\n127.0.0.1 www.nicozon.net\n127.0.0.1 9anime.to\n127.0.0.1 www9.gogoanimehub.tv\n127.0.0.1 9anime.ky\n127.0.0.1 9anime.ru\n127.0.0.1 9anime.cz\n127.0.0.1 9anime.ws\n127.0.0.1 www.nicovideo.jp\n127.0.0.1 animenew.be\n127.0.0.1 b9good.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse) & done; 
+
+*/1 17-20 * * 5	root	chattr -iu /etc/hosts;sed -i '3,19c #127.0.0.1 www.youtube.com\n127.0.0.1 y2mate.com\n127.0.0.1 yt1s.com\n127.0.0.1 yt1s.com\n127.0.0.1 www.y2mate.com\n#127.0.0.1 soundcloud.com\n127.0.0.1 www.bilibili.com\n#127.0.0.1 www.nicozon.net\n#127.0.0.1 9anime.to\n#127.0.0.1 www9.gogoanimehub.tv\n#127.0.0.1 9anime.ky\n#127.0.0.1 9anime.ru\n127.0.0.1 9anime.cz\n#127.0.0.1 9anime.ws\n#127.0.0.1 www.nicovideo.jp\n127.0.0.1 animenew.be\n127.0.0.1 b9good.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse
+#*/1 0-20 * * 5 root  chattr -iu /etc/hosts;sed -i '11c 127.0.0.1 9anime.to' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse
+#*/1 17-20 * * 5 root  chattr -iu /etc/hosts;sed -i '11c #127.0.0.1 #9anime.to' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse
+##mon
+#1-15/1 9 * * 1 root chattr -iu /etc/hosts;sed -i '3c #127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse
+#15-59/1 9 * * 1 root  chattr -iu /etc/hosts;sed -i '3c 127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse
+#
+##*/1 0-8,10-23 * * 1 root chattr -iu /etc/hosts;sed -i '3c 127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse;chattr -iu /etc/hosts;sed -i '3,19c 127.0.0.1 www.youtube.com\n127.0.0.1 y2mate.com\n127.0.0.1 yt1s.com\n127.0.0.1 yt1s.com\n127.0.0.1 www.y2mate.com\n#127.0.0.1 soundcloud.com\n127.0.0.1 www.bilibili.com\n127.0.0.1 www.nicozon.net\n127.0.0.1 9anime.to\n127.0.0.1 www9.gogoanimehub.tv\n127.0.0.1 9anime.ky\n127.0.0.1 9anime.ru\n127.0.0.1 9anime.cz\n127.0.0.1 9anime.ws\n127.0.0.1 www.nicovideo.jp\n127.0.0.1 animenew.be\n127.0.0.1 b9good.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse
+#*/1 0-8,10-23 * * 1	root	for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/hosts;sed -i '3c 127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse;chattr -iu /etc/hosts;sed -i '3,19c 127.0.0.1 www.youtube.com\n127.0.0.1 y2mate.com\n127.0.0.1 yt1s.com\n127.0.0.1 yt1s.com\n127.0.0.1 www.y2mate.com\n#127.0.0.1 soundcloud.com\n127.0.0.1 www.bilibili.com\n127.0.0.1 www.nicozon.net\n127.0.0.1 9anime.to\n127.0.0.1 www9.gogoanimehub.tv\n127.0.0.1 9anime.ky\n127.0.0.1 9anime.ru\n127.0.0.1 9anime.cz\n127.0.0.1 9anime.ws\n127.0.0.1 www.nicovideo.jp\n127.0.0.1 animenew.be\n127.0.0.1 b9good.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse) & done; 
+#
+##tue
+#1-15/1 9 * * 2 root chattr -iu /etc/hosts;sed -i '3c #127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse
+#15-59/1 9 * * 2 root chattr -iu /etc/hosts;sed -i '3c 127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse
+#
+##*/1 0-8,10-23 * * 2 root chattr -iu /etc/hosts;sed -i '3c 127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse;chattr -iu /etc/hosts;sed -i '3,19c 127.0.0.1 www.youtube.com\n127.0.0.1 y2mate.com\n127.0.0.1 yt1s.com\n127.0.0.1 yt1s.com\n127.0.0.1 www.y2mate.com\n#127.0.0.1 soundcloud.com\n127.0.0.1 www.bilibili.com\n127.0.0.1 www.nicozon.net\n127.0.0.1 9anime.to\n127.0.0.1 www9.gogoanimehub.tv\n127.0.0.1 9anime.ky\n127.0.0.1 9anime.ru\n127.0.0.1 9anime.cz\n127.0.0.1 9anime.ws\n127.0.0.1 www.nicovideo.jp\n127.0.0.1 animenew.be\n127.0.0.1 b9good.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse
+#
+#*/1 0-8,12-23 * * 2	root	for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/hosts;sed -i '3c 127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse;chattr -iu /etc/hosts;sed -i '3,19c 127.0.0.1 www.youtube.com\n127.0.0.1 y2mate.com\n127.0.0.1 yt1s.com\n127.0.0.1 yt1s.com\n127.0.0.1 www.y2mate.com\n#127.0.0.1 soundcloud.com\n127.0.0.1 www.bilibili.com\n127.0.0.1 www.nicozon.net\n127.0.0.1 9anime.to\n127.0.0.1 www9.gogoanimehub.tv\n127.0.0.1 9anime.ky\n127.0.0.1 9anime.ru\n127.0.0.1 9anime.cz\n127.0.0.1 9anime.ws\n127.0.0.1 www.nicovideo.jp\n127.0.0.1 animenew.be\n127.0.0.1 b9good.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse) & done; 
+#
+##wed
+#1-15/1 11 * * 3 root chattr -iu /etc/hosts;sed -i '3c #127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse
+#15-59/1 11 * * 3 root chattr -iu /etc/hosts;sed -i '3c 127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse
+#
+##*/1 0-10,12-23 * * 3 chattr -iu /etc/hosts;sed -i '3c 127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse;chattr -iu /etc/hosts;sed -i '3,19c 127.0.0.1 www.youtube.com\n127.0.0.1 y2mate.com\n127.0.0.1 yt1s.com\n127.0.0.1 yt1s.com\n127.0.0.1 www.y2mate.com\n#127.0.0.1 soundcloud.com\n127.0.0.1 www.bilibili.com\n127.0.0.1 www.nicozon.net\n127.0.0.1 9anime.to\n127.0.0.1 www9.gogoanimehub.tv\n127.0.0.1 9anime.ky\n127.0.0.1 9anime.ru\n127.0.0.1 9anime.cz\n127.0.0.1 9anime.ws\n127.0.0.1 www.nicovideo.jp\n127.0.0.1 animenew.be\n127.0.0.1 b9good.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse
+#
+#*/1 0-10,12-23 * * 3	root	for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/hosts;sed -i '3c 127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse;chattr -iu /etc/hosts;sed -i '3,19c 127.0.0.1 www.youtube.com\n127.0.0.1 y2mate.com\n127.0.0.1 yt1s.com\n127.0.0.1 yt1s.com\n127.0.0.1 www.y2mate.com\n#127.0.0.1 soundcloud.com\n127.0.0.1 www.bilibili.com\n127.0.0.1 www.nicozon.net\n127.0.0.1 9anime.to\n127.0.0.1 www9.gogoanimehub.tv\n127.0.0.1 9anime.ky\n127.0.0.1 9anime.ru\n127.0.0.1 9anime.cz\n127.0.0.1 9anime.ws\n127.0.0.1 www.nicovideo.jp\n127.0.0.1 animenew.be\n127.0.0.1 b9good.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse) & done; 
+## sucess syntax <tab>root<tab> tabを押しても以下の行数になる コメントアウトすると改善
+##*/1 * * * 3	root	echo hello > /home/keito/hello.log
+#
+##thu
+#1-15/1 9 * * 4 root chattr -iu /etc/hosts;sed -i '3c #127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse
+#15-59/1 9 * * 4 root chattr -iu /etc/hosts;sed -i '3c 127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse
+#
+#1-15/1 11 * * 4 root chattr -iu /etc/hosts;sed -i '3c #127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse
+#15-59/1 11 * * 4 root chattr -iu /etc/hosts;sed -i '3c 127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse
+##*/1 0-8,10,12-23 * * 4 root chattr -iu /etc/hosts;sed -i '3c 127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse;chattr -iu /etc/hosts;sed -i '3,19c 127.0.0.1 www.youtube.com\n127.0.0.1 y2mate.com\n127.0.0.1 yt1s.com\n127.0.0.1 yt1s.com\n127.0.0.1 www.y2mate.com\n#127.0.0.1 soundcloud.com\n127.0.0.1 www.bilibili.com\n127.0.0.1 www.nicozon.net\n127.0.0.1 9anime.to\n127.0.0.1 www9.gogoanimehub.tv\n127.0.0.1 9anime.ky\n127.0.0.1 9anime.ru\n127.0.0.1 9anime.cz\n127.0.0.1 9anime.ws\n127.0.0.1 www.nicovideo.jp\n127.0.0.1 animenew.be\n127.0.0.1 b9good.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse
+#
+#*/1 0-8,10,12-23 * * 4	root	for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/hosts;sed -i '3c 127.0.0.1 www.youtube.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse;chattr -iu /etc/hosts;sed -i '3,19c 127.0.0.1 www.youtube.com\n127.0.0.1 y2mate.com\n127.0.0.1 yt1s.com\n127.0.0.1 yt1s.com\n127.0.0.1 www.y2mate.com\n#127.0.0.1 soundcloud.com\n127.0.0.1 www.bilibili.com\n127.0.0.1 www.nicozon.net\n127.0.0.1 9anime.to\n127.0.0.1 www9.gogoanimehub.tv\n127.0.0.1 9anime.ky\n127.0.0.1 9anime.ru\n127.0.0.1 9anime.cz\n127.0.0.1 9anime.ws\n127.0.0.1 www.nicovideo.jp\n127.0.0.1 animenew.be\n127.0.0.1 b9good.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse) & done; 
+
+*/1 * * * *	root	chattr +iu /etc/crontab /var/spool/cron/crontabs/root /etc/cron.d/media_filetr
+
+
+###change domain test fase###
+#domainにanimeサイト含めようと思ったが，サブ，セカンドレベルドメインが規制出来ない list.b9good.com 9anime. gogoanime
+	#Mon~Thu#
+*/1 * * * 0-4,6     root    for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/NetworkManager/dnsmasq.d/local;rm /etc/NetworkManager/dnsmasq.d/locale;chattr -iu /etc/NetworkManager/dnsmasq.d/local;echo 'address=/youtube4kdownloader.com/.oceansaver.in/.xyz/127.0.0.1\nserver=/pic.weeabo0.xyz/okazu-sakutu.xyz/#' > /etc/NetworkManager/dnsmasq.d/local;chattr +ui /etc/NetworkManager/dnsmasq.d/local;chattr -iu /etc/NetworkManager/dnsmasq.d/locale;rm /etc/NetworkManager/dnsmasq.d/locale) & done;
+
+	#Fri#
+*/1 0-16,21-23 * * 5     root    for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/NetworkManager/dnsmasq.d/local;rm /etc/NetworkManager/dnsmasq.d/locale;chattr -iu /etc/NetworkManager/dnsmasq.d/local;echo 'address=/youtube4kdownloader.com/.oceansaver.in/.xyz/127.0.0.1\nserver=/pic.weeabo0.xyz/okazu-sakutu.xyz/#' > /etc/NetworkManager/dnsmasq.d/local;chattr +ui /etc/NetworkManager/dnsmasq.d/local;chattr -iu /etc/NetworkManager/dnsmasq.d/locale;rm /etc/NetworkManager/dnsmasq.d/locale) & done;
+
+	#add restart network on Fri#
+*/30 21-23 * * 5     root   service network-manager restart 
+
+	#unlock on the Fri#
+*/1 17-20 * * 5     root    for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/NetworkManager/dnsmasq.d/local;rm /etc/NetworkManager/dnsmasq.d/locale;chattr -iu /etc/NetworkManager/dnsmasq.d/local;echo '#address=/youtube4kdownloader.com/.oceansaver.in/.xyz/127.0.0.1\n#server=/pic.weeabo0.xyz/okazu-sakutu.xyz/#' > /etc/NetworkManager/dnsmasq.d/local;chattr +ui /etc/NetworkManager/dnsmasq.d/local;chattr -iu /etc/NetworkManager/dnsmasq.d/locale;rm /etc/NetworkManager/dnsmasq.d/locale) & done;
+######
+
