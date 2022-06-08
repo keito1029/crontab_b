@@ -1,0 +1,32 @@
+隔週の水曜日 -> 解除
+それ以外
+
+毎日に分散というより水曜日のみ隔週の識別をかける
+	隔週かどうか判定 no 規制
+					yes 解除
+	何もしないなにかする2つ
+
+## /etc/hosts ##
+## 隔週じゃない
+*/1 17-20 * * 5	root	test $(expr $(date +\%W) \% 2) -ne 0 && chattr -iu /etc/hosts;sed -i '3,19c #127.0.0.1 www.youtube.com\n127.0.0.1 y2mate.com\n127.0.0.1 yt1s.com\n127.0.0.1 yt1s.com\n127.0.0.1 www.y2mate.com\n#127.0.0.1 soundcloud.com\n127.0.0.1 www.bilibili.com\n#127.0.0.1 www.nicozon.net\n#127.0.0.1 9anime.to\n#127.0.0.1 www9.gogoanimehub.tv\n#127.0.0.1 9anime.ky\n#127.0.0.1 9anime.ru\n127.0.0.1 9anime.cz\n#127.0.0.1 9anime.ws\n#127.0.0.1 www.nicovideo.jp\n127.0.0.1 animenew.be\n127.0.0.1 b9good.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse
+
+#test $(expr $(date +\%W) \% 2) -ne 0 && echo hello
+
+## 隔週規制する
+*/1 17-20 * * 5	root	test $(expr $(date +\%W) \% 2) -eq 0 && chattr -iu /etc/hosts;sed -i '3,19c #127.0.0.1 www.youtube.com\n127.0.0.1 y2mate.com\n127.0.0.1 yt1s.com\n127.0.0.1 yt1s.com\n127.0.0.1 www.y2mate.com\n#127.0.0.1 soundcloud.com\n127.0.0.1 www.bilibili.com\n#127.0.0.1 www.nicozon.net\n#127.0.0.1 9anime.to\n#127.0.0.1 www9.gogoanimehub.tv\n#127.0.0.1 9anime.ky\n#127.0.0.1 9anime.ru\n127.0.0.1 9anime.cz\n#127.0.0.1 9anime.ws\n#127.0.0.1 www.nicovideo.jp\n127.0.0.1 animenew.be\n127.0.0.1 b9good.com' /etc/hosts;chattr +ui /etc/hosts;chattr -iu /etc/hostse;rm /etc/hostse
+
+#test $(expr $(date +\%W) \% 2) -eq 0 && echo hello
+
+
+## dns cron ##
+
+
+
+	#Fri#
+*/1 0-16,21-23 * * 5     root    for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/NetworkManager/dnsmasq.d/local;rm /etc/NetworkManager/dnsmasq.d/locale;chattr -iu /etc/NetworkManager/dnsmasq.d/local;echo 'address=/youtube4kdownloader.com/.oceansaver.in/.xyz/127.0.0.1\nserver=/pic.weeabo0.xyz/okazu-sakutu.xyz/#' > /etc/NetworkManager/dnsmasq.d/local;chattr +ui /etc/NetworkManager/dnsmasq.d/local;chattr -iu /etc/NetworkManager/dnsmasq.d/locale;rm /etc/NetworkManager/dnsmasq.d/locale) & done;
+
+	#add restart network on Fri#
+*/30 21-23 * * 5     root   service network-manager restart 
+
+	#unlock on the Fri#
+*/1 17-20 * * 5     root    for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/NetworkManager/dnsmasq.d/local;rm /etc/NetworkManager/dnsmasq.d/locale;chattr -iu /etc/NetworkManager/dnsmasq.d/local;echo '#address=/youtube4kdownloader.com/.oceansaver.in/.xyz/127.0.0.1\n#server=/pic.weeabo0.xyz/okazu-sakutu.xyz/#' > /etc/NetworkManager/dnsmasq.d/local;chattr +ui /etc/NetworkManager/dnsmasq.d/local;chattr -iu /etc/NetworkManager/dnsmasq.d/locale;rm /etc/NetworkManager/dnsmasq.d/locale) & done;
