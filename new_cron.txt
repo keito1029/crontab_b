@@ -25,7 +25,9 @@
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 XDG_RUNTIME_DIR=/run/user/1000
 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
-DISPLAY=:0隔週の水曜日 -> 解除
+DISPLAY=:0
+
+#隔週の水曜日 -> 解除
 #それ以外
 #
 #毎日に分散というより水曜日のみ隔週の識別をかける
