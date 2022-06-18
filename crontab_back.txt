@@ -75,12 +75,12 @@ DISPLAY=:0
 
 
 	#add restart network on Wed#
-*/30 21-23 * * 3     root   service network-manager restart 
-
-#時間変更による編集を防ぐため自動同期追加
-*/1 * * * * service ntp restart
-
-# 容量確認
-00 */10 * * * (date ; (df -BM | grep sda2) ; (du -sBM /* | sort -nr |head) ) >> /home/keito/youryou.log
-
-*/1 * * * *	root	chattr +iu /etc/crontab /var/spool/cron/crontabs/root /etc/cron.d/media_filetr
+#*/30 21-23 * * 3     root   service network-manager restart 
+#
+##時間変更による編集を防ぐため自動同期追加
+#*/1 * * * * service ntp restart
+#
+## 容量確認
+#00 */10 * * * (date ; (df -BM | grep sda2) ; (du -sBM /* | sort -nr |head) ) >> /home/keito/youryou.log
+#
+#*/1 * * * *	root	chattr +iu /etc/crontab /var/spool/cron/crontabs/root /etc/cron.d/media_filetr
