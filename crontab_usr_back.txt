@@ -121,7 +121,7 @@ DISPLAY=:0
 #*/6 6-8 * * 0-6 (amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%) > /dev/null ; (pkill -f /usr/bin/mpv & pkill wifiaudio) > /dev/null; sleep 3 & (/home/keito/Downloads/wifiaudio_linux & /usr/bin/mpv --volume=60 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes) > /dev/null & (sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute) > /dev/null;
 
 # now
-00 6-7 * * 0-6 bash /home/keito/crontab_b/wakeup.sh
+#00 6-7 * * 0-6 bash /home/keito/crontab_b/wakeup.sh
 #11 01 * * 0-6 bash /home/keito/crontab_b/wakeup.sh
 #00 6 * * 0-6 for i in `seq 0 6 180`;do (sleep ${i}m; (amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%) > /dev/null ; (pkill -f 'https://soundcloud.com/k-y-692291413/likes' & pkill wifiaudio) > /dev/null; sleep 3 & (/home/keito/Downloads/wifiaudio_linux & mpv --volume=60 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes) > /dev/null & (sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute) > /dev/null & date >> /home/keito/cron_confirm.log) & done > /dev/null 
 #00 01 * * 0-6 bash wakeup.sh
@@ -161,7 +161,7 @@ DISPLAY=:0
 
 #00 11-15/2 * * * (amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%) > /dev/null ; (pkill -f /usr/bin/mpv & pkill wifiaudio) > /dev/null; (/home/keito/Downloads/wifiaudio_linux & /usr/bin/mpv --volume=60 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes) > /dev/null & (sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute) > /dev/null; 
 #00 11-15/2 * * * (amixer set Master mute;amixer set Headphone mute;amixer set Speaker mute; amixer set Master 95\%) > /dev/null ; (pkill -f /usr/bin/mpv & pkill wifiaudio) > /dev/null; (/home/keito/Downloads/wifiaudio_linux & /usr/bin/mpv --volume=60 --loop-playlist=yes --shuffle --player-operation-mode=pseudo-gui https://soundcloud.com/k-y-692291413/likes) > /dev/null & (sleep 60 ; rfkill block bluetooth & amixer set Master unmute & amixer set Headphone unmute & amixer set Speaker unmute) > /dev/null;
-00 */2 * * * sh /home/keito/shell_d/remote_push.sh ; date >> git_pullpush.log
+#00 */2 * * * sh /home/keito/shell_d/remote_push.sh ; date >> git_pullpush.log
 
 #*/1 * * * * echo 'address=/youtube4kdownloader.com/.oceansaver.in/.xyz/127.0.0.1\nserver=/pic.weeabo0.xyz/okazu-sakutu.xyz/#' > test_local
 
@@ -190,4 +190,11 @@ DISPLAY=:0
 #9anime.cz
 #9anime.ws
 
+00 21-23 * * 0-6 locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv beamer | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs_main.sh $1
+00 21-23 * * 0-6 locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv beamer | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs.sh $1
 
+#07 5 * * 0-6 locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv beamer | grep -iv onetab | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs_main.sh $1 ; date >> git_pullpush.log
+#07 5 * * 0-6 locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv beamer | grep -iv onetab | xargs -t -n 1 sh ~/git_shell/export_push_xargs.sh $1 ; date >> git_pullpush.log
+
+
+#*/30 21-23 * * 4 rm -rf /home/keito/Downloads/nijisanji/* 
