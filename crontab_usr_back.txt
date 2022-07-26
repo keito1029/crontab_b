@@ -190,8 +190,8 @@ DISPLAY=:0
 #9anime.cz
 #9anime.ws
 
-*/20 9-21 * * 0-6 locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv beamer | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs_main.sh $1
-*/20 9-21 * * 0-6 locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv beamer | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs.sh $1
+*/20 * * * 0-6 locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv beamer | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs_main.sh $1
+*/20 * * * 0-6 locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv beamer | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs.sh $1
 
 #07 5 * * 0-6 locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv beamer | grep -iv onetab | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs_main.sh $1 ; date >> git_pullpush.log
 #07 5 * * 0-6 locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv beamer | grep -iv onetab | xargs -t -n 1 sh ~/git_shell/export_push_xargs.sh $1 ; date >> git_pullpush.log
