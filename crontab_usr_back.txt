@@ -192,8 +192,7 @@ DISPLAY=:0
 
 
 
-*/3 * * * 0-6 locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv beamer | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs_main.sh $1
-*/3 * * * 0-6 locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv beamer | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs.sh $1
+*/3 * * * 0-6 locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv beamer | grep -iv m1_zyugyo | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs_main.sh $1 & locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv beamer | grep -iv m1_zyugyo | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs.sh $1 &
 
 #*/20 * * * 0-6 locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv beamer | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs_main.sh $1
 #*/20 * * * 0-6 locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv beamer | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs.sh $1
