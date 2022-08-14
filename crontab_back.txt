@@ -24,7 +24,7 @@
 
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 XDG_RUNTIME_DIR=/run/user/1000
-DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+DBUS_SESSION_BUS_#address=unix:path=/run/user/1000/bus
 DISPLAY=:0
 
 #backups
@@ -73,16 +73,16 @@ DISPLAY=:0
 
 ###### dns cron ######
 	#Mon~Fri#
-*/1 0-11,13-23 * * 0-6     root    test $(expr $(date +\%W) \% 2) -ne 0 && for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/NetworkManager/dnsmasq.d/local;rm /etc/NetworkManager/dnsmasq.d/locale;chattr -iu /etc/NetworkManager/dnsmasq.d/local;echo 'address=/youtube4kdownloader.com/.oceansaver.in/.xyz/127.0.0.1\nserver=/pic.weeabo0.xyz/okazu-sakutu.xyz/#' > /etc/NetworkManager/dnsmasq.d/local;chattr +ui /etc/NetworkManager/dnsmasq.d/local;chattr -iu /etc/NetworkManager/dnsmasq.d/locale;rm /etc/NetworkManager/dnsmasq.d/locale) & done;
+*/1 0-11,13-23 * * 0-6     root    test $(expr $(date +\%W) \% 2) -ne 0 && for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/NetworkManager/dnsmasq.d/local;rm /etc/NetworkManager/dnsmasq.d/locale;chattr -iu /etc/NetworkManager/dnsmasq.d/local;echo '#address=/youtube4kdownloader.com/.oceansaver.in/.xyz/127.0.0.1\nserver=/pic.weeabo0.xyz/okazu-sakutu.xyz/#' > /etc/NetworkManager/dnsmasq.d/local;chattr +ui /etc/NetworkManager/dnsmasq.d/local;chattr -iu /etc/NetworkManager/dnsmasq.d/locale;rm /etc/NetworkManager/dnsmasq.d/locale) & done;
 
 #unlock for lesson
-57 12 * * 2	root	chattr -iu /etc/NetworkManager/dnsmasq.d/local;rm /etc/NetworkManager/dnsmasq.d/locale;chattr -iu /etc/NetworkManager/dnsmasq.d/local;echo '#address=/youtube4kdownloader.com/.oceansaver.in/.xyz/127.0.0.1\n#server=/pic.weeabo0.xyz/okazu-sakutu.xyz/#' > /etc/NetworkManager/dnsmasq.d/local;chattr +ui /etc/NetworkManager/dnsmasq.d/local;chattr -iu /etc/NetworkManager/dnsmasq.d/locale;rm /etc/NetworkManager/dnsmasq.d/locale) & done;
+57 12 * * 2	root	chattr -iu /etc/NetworkManager/dnsmasq.d/local;rm /etc/NetworkManager/dnsmasq.d/locale;chattr -iu /etc/NetworkManager/dnsmasq.d/local;echo '##address=/youtube4kdownloader.com/.oceansaver.in/.xyz/127.0.0.1\n#server=/pic.weeabo0.xyz/okazu-sakutu.xyz/#' > /etc/NetworkManager/dnsmasq.d/local;chattr +ui /etc/NetworkManager/dnsmasq.d/local;chattr -iu /etc/NetworkManager/dnsmasq.d/locale;rm /etc/NetworkManager/dnsmasq.d/locale) & done;
 
 #every other week without WED#
-*/1 0-11,13-23 * * 0-2,4-6	root	test $(expr $(date +\%W) \% 2) -eq 0 &&  for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/NetworkManager/dnsmasq.d/local;rm /etc/NetworkManager/dnsmasq.d/locale;chattr -iu /etc/NetworkManager/dnsmasq.d/local;echo 'address=/youtube4kdownloader.com/.oceansaver.in/.xyz/127.0.0.1\nserver=/pic.weeabo0.xyz/okazu-sakutu.xyz/#' > /etc/NetworkManager/dnsmasq.d/local;chattr +ui /etc/NetworkManager/dnsmasq.d/local;chattr -iu /etc/NetworkManager/dnsmasq.d/locale;rm /etc/NetworkManager/dnsmasq.d/locale) & done;
-*/1 0-11,13-16,21-23 * * 3	root	test $(expr $(date +\%W) \% 2) -eq 0 && for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/NetworkManager/dnsmasq.d/local;rm /etc/NetworkManager/dnsmasq.d/locale;chattr -iu /etc/NetworkManager/dnsmasq.d/local;echo 'address=/youtube4kdownloader.com/.oceansaver.in/.xyz/127.0.0.1\nserver=/pic.weeabo0.xyz/okazu-sakutu.xyz/#' > /etc/NetworkManager/dnsmasq.d/local;chattr +ui /etc/NetworkManager/dnsmasq.d/local;chattr -iu /etc/NetworkManager/dnsmasq.d/locale;rm /etc/NetworkManager/dnsmasq.d/locale) & done;
+*/1 0-11,13-23 * * 0-2,4-6	root	test $(expr $(date +\%W) \% 2) -eq 0 &&  for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/NetworkManager/dnsmasq.d/local;rm /etc/NetworkManager/dnsmasq.d/locale;chattr -iu /etc/NetworkManager/dnsmasq.d/local;echo '#address=/youtube4kdownloader.com/.oceansaver.in/.xyz/127.0.0.1\nserver=/pic.weeabo0.xyz/okazu-sakutu.xyz/#' > /etc/NetworkManager/dnsmasq.d/local;chattr +ui /etc/NetworkManager/dnsmasq.d/local;chattr -iu /etc/NetworkManager/dnsmasq.d/locale;rm /etc/NetworkManager/dnsmasq.d/locale) & done;
+*/1 0-11,13-16,21-23 * * 3	root	test $(expr $(date +\%W) \% 2) -eq 0 && for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/NetworkManager/dnsmasq.d/local;rm /etc/NetworkManager/dnsmasq.d/locale;chattr -iu /etc/NetworkManager/dnsmasq.d/local;echo '#address=/youtube4kdownloader.com/.oceansaver.in/.xyz/127.0.0.1\nserver=/pic.weeabo0.xyz/okazu-sakutu.xyz/#' > /etc/NetworkManager/dnsmasq.d/local;chattr +ui /etc/NetworkManager/dnsmasq.d/local;chattr -iu /etc/NetworkManager/dnsmasq.d/locale;rm /etc/NetworkManager/dnsmasq.d/locale) & done;
 	#unlock on the Wed#
-*/1 17-20 * * 3	root	test $(expr $(date +\%W) \% 2) -eq 0 && for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/NetworkManager/dnsmasq.d/local;rm /etc/NetworkManager/dnsmasq.d/locale;chattr -iu /etc/NetworkManager/dnsmasq.d/local;echo '#address=/youtube4kdownloader.com/.oceansaver.in/.xyz/127.0.0.1\n#server=/pic.weeabo0.xyz/okazu-sakutu.xyz/#' > /etc/NetworkManager/dnsmasq.d/local;chattr +ui /etc/NetworkManager/dnsmasq.d/local;chattr -iu /etc/NetworkManager/dnsmasq.d/locale;rm /etc/NetworkManager/dnsmasq.d/locale) & done;
+*/1 17-20 * * 3	root	test $(expr $(date +\%W) \% 2) -eq 0 && for i in `seq 0 1 59`;do (sleep ${i}; chattr -iu /etc/NetworkManager/dnsmasq.d/local;rm /etc/NetworkManager/dnsmasq.d/locale;chattr -iu /etc/NetworkManager/dnsmasq.d/local;echo '##address=/youtube4kdownloader.com/.oceansaver.in/.xyz/127.0.0.1\n#server=/pic.weeabo0.xyz/okazu-sakutu.xyz/#' > /etc/NetworkManager/dnsmasq.d/local;chattr +ui /etc/NetworkManager/dnsmasq.d/local;chattr -iu /etc/NetworkManager/dnsmasq.d/locale;rm /etc/NetworkManager/dnsmasq.d/locale) & done;
 
 
 	#add restart network on Wed#
