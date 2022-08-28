@@ -193,9 +193,10 @@ DISPLAY=:0
 
 
 */3 * * * 0-6 locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv unity | grep -iv beamer | grep -iv m1_zyugyo | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs_main.sh $1 & locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv unity | grep -iv beamer | grep -iv m1_zyugyo | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs.sh $1 &
-#*/5 * * * 0-6 locate /home/keito/Unity/*.git | grep -e \.git\$ | sed s/.git// | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs_main.sh $1 & locate /home/keito/Unity/*.git | grep -e \.git\$ | sed s/.git// | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs.sh $1
+*/5 * * * 0-6 locate /home/keito/myUnity/*.git | grep -e \.git\$ | sed s/.git// | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs_main.sh $1 & locate /home/keito/myUnity/*.git | grep -e \.git\$ | sed s/.git// | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs.sh $1
 ##回線速度が遅い時用
-#*/5 * * * 0-6 test $(speedtest --simple | grep Download | awk '{print $2}' | cut -f 1 -d ".") -gt 10 && locate /home/keito/Unity/*.git | grep -e \.git\$ | sed s/.git// | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs.sh $1
+#*/5 * * * 0-6 test $(speedtest --simple | grep Download | awk '{print $2}' | cut -f 1 -d ".") -gt 10 && locate /home/keito/myUnity/*.git | grep -e \.git\$ | sed s/.git// | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs.sh $1 & locate /home/keito/myUnity/*.git | grep -e \.git\$ | sed s/.git// | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs.sh $1
+
 
 #*/20 * * * 0-6 locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv beamer | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs_main.sh $1
 #*/20 * * * 0-6 locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv beamer | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs.sh $1
