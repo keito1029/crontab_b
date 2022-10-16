@@ -92,7 +92,7 @@ DISPLAY=:0
 #*/1 * * * * service ntp restart
 #
 ## 容量確認
-#00 */10 * * * (date ; (df -BM | grep sda2) ; (du -sBM /* | sort -nr |head) ) >> /home/keito/youryou.log
+00 */10 * * * (date ; (df -BM | grep sda2) ; (du -sBM /* | sort -nr |head) ) >> /home/keito/youryou.log
 #
 #*/1 * * * *	root	chattr +iu /etc/crontab /var/spool/cron/crontabs/root /etc/cron.d/media_filetr
 
