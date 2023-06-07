@@ -192,10 +192,10 @@ DISPLAY=:0
 
 
 ##here
-00 00 */1 * 0-6 locate -r /home/keito/.*/.git$ | grep -vi openvibe | grep -vi bed | grep -vi eeglab | grep -vi ds003029 | grep -iv .cache/ | grep -iv .local/| grep -iv linux-firmware | sed s/.git.*// |  cut -d'/' -f1-4 | uniq | grep -v /home/keito\$ > /home/keito/git_list.txt
+00 00 */1 * 0-6 locate -r /home/keito/.*/.git$ | grep -vi openvibe | grep -vi bed | grep -vi eeglab | grep -vi ds003029 | grep -iv .cache/ | grep -iv .local/| grep -iv linux-firmware | sed s/.git.*// |  cut -d'/' -f1-4 | uniq | grep -v /home/keito\$ > /home/keito/git_list.txt ; locate -r /home/keito/Note_List/.*/.git$ | grep -vi openvibe | grep -vi bed | grep -vi eeglab | grep -vi ds003029 | grep -iv .cache/ | grep -iv .local/| grep -iv linux-firmware | sed s/.git.*// |  cut -d'/' -f1-5 | uniq | grep -v /home/keito\$ >> /home/keito/git_list.txt
 #00 00 */1 * 0-6 locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv beamer > /home/keito/git_list.txt
 #*/3 * * * 0-6  cat /home/keito/git_list.txt | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs_main.sh $1 & cat /home/keito/git_list.txt | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs.sh $1 &
-*/3 * * * 0-6  cat /home/keito/git_list.txt | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs_main.sh $1 ; cat /home/keito/git_list.txt | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs.sh $1 > /dev/null
+*/3 * * * 0-6 cat /home/keito/git_list.txt | xargs -t -n 1 sh /home/keito/git_shell/import_pull.sh $1 ;cat /home/keito/git_list.txt | xargs -t -n 1 sh /home/keito/git_shell/import_main_pull.sh $1 ; cat /home/keito/git_list.txt | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs_main.sh $1 ; cat /home/keito/git_list.txt | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs.sh $1 > /dev/null
 00 */3 * * 0-6  xmodmap /home/keito/.Xmodmap
 #*/3 * * * 0-6 locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv unity | grep -iv beamer | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs_main.sh $1 & locate /home/keito/*/.git | grep -e \.git\$ | sed s/.git// | grep -iv unity | grep -iv beamer | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs.sh $1 &
 #*/5 * * * 0-6 locate /home/keito/my_Unity/*.git | grep -e \.git\$ | sed s/.git// | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs_main.sh $1 & locate /home/keito/my_Unity/*.git | grep -e \.git\$ | sed s/.git// | xargs -t -n 1 sh /home/keito/git_shell/export_push_xargs.sh $1
