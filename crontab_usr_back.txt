@@ -213,7 +213,8 @@ DISPLAY=:0
 
 
 */30 21-23 * * 4 rm /home/keito/Downloads/nijisanji/* 
-*/3 * * * * rm /home/keito/.config/google-chrome/Default/Sessions/* ; cp /home/keito/.config/google-chrome/Default/Sessions/* /home/keito/my_dots/Chrome_Tabs/
+* */1 * * * cp /home/keito/.config/google-chrome/Default/Sessions/* /home/keito/my_dots/Chrome_Tabs/
+* * */1 * * rm /home/keito/my_dots/Chrome_Tabs/Sessions/*
+#*/3 * * * * rm /home/keito/.config/google-chrome/Default/Sessions/* ; cp /home/keito/.config/google-chrome/Default/Sessions/* /home/keito/my_dots/Chrome_Tabs/
 
-##多分lastの記述コピペするだけで復元できる?
-*/30 * * * * cp /home/keito/.tmux/plugins/tmux-resurrect/tests/fixtures/{restore_file.txt,save_file.txt} /home/keito/my_dots/Tmux/ ; cp /home/keito/.local/share/tmux/resurrect/tmux_resurrect_* /home/keito/my_dots/Tmux/ ; cp /home/keito/.local/share/tmux/resurrect/last /home/keito/my_dots/Tmux
+*/30 * * * * cp /home/keito/.local/share/tmux/resurrect/last /home/keito/my_dots/Tmux/
